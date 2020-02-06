@@ -1,0 +1,13 @@
+{
+  "name": "bizbudding/mai-installer",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "afragen/wp-dependency-installer": "^2.1"
+  },
+  "autoload": {
+    "files": [
+      "mai-installer.php"
+    ]
+  }
+}
