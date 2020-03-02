@@ -47,6 +47,6 @@ function mai_theme_redirect() {
 	global $pagenow;
 
 	if ( "themes.php" == $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
-		exit( wp_redirect( admin_url( 'admin.php?page=genesis-customizer-demo-import' ) ) );
+//		exit( wp_redirect( admin_url( 'admin.php?page=genesis-customizer-demo-import' ) ) );
 	}
 }
