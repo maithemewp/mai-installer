@@ -71,7 +71,7 @@ add_action( 'admin_init', 'mai_theme_redirect', 100 );
 function mai_theme_redirect() {
 	global $pagenow;
 
-	if ( 'themes.php' === $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
+	if ( function_exists( 'mai_get_engine_theme' ) && 'themes.php' === $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
 		exit( wp_redirect( admin_url( 'admin.php?page=mai-setup-wizard' ) ) );
 	}
 }
