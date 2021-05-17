@@ -12,6 +12,8 @@
 
 /**
  * Add theme support for Mai Engine.
+ * Default Mai Engine themes are already supported
+ * so let's check first.
  *
  * Default Mai Engine themes are already supported so let's check first.
  *
@@ -50,7 +52,7 @@ function mai_plugin_dependencies() {
 			'slug'     => 'mai-engine/mai-engine.php',
 			'uri'      => 'maithemewp/mai-engine',
 			'branch'   => 'master',
-			'optional' => false,
+			'required' => true,
 		],
 	] );
 
