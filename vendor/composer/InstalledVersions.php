@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '64a9858806e8c7dba2cfe5a6f075026a4cfdf49b',
+    'reference' => '8fb8142b863c8c88cea01aa447fd1341fc3c274c',
     'name' => 'maithemewp/mai-installer',
   ),
   'versions' => 
@@ -60,7 +60,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '64a9858806e8c7dba2cfe5a6f075026a4cfdf49b',
+      'reference' => '8fb8142b863c8c88cea01aa447fd1341fc3c274c',
     ),
   ),
 );
