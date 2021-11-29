@@ -12,8 +12,6 @@
 
 /**
  * Add theme support for Mai Engine.
- * Default Mai Engine themes are already supported
- * so let's check first.
  *
  * Default Mai Engine themes are already supported so let's check first.
  *
@@ -34,6 +32,9 @@ add_action( 'after_setup_theme', 'mai_plugin_dependencies' );
  * @return void
  */
 function mai_plugin_dependencies() {
+	if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
+		return;
+	}
 
 	// Filter dependencies for use in engine plugin.
 	$config = apply_filters( 'mai_plugin_dependencies', [
@@ -43,12 +44,12 @@ function mai_plugin_dependencies() {
 			'slug'     => 'mai-engine/mai-engine.php',
 			'uri'      => 'maithemewp/mai-engine',
 			'branch'   => 'master',
-			'required' => true,
+			'optional' => false,
 		],
 	] );
 
 	// Install and active dependencies.
-	\WP_Dependency_Installer::instance()->register( $config )->run();
+	WP_Dependency_Installer::instance( __DIR__ )->register( $config )->run();
 }
 
 add_action( 'admin_init', 'mai_theme_redirect', 100 );
