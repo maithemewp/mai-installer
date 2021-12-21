@@ -6,5 +6,8 @@
         "files": [
             "mai-installer.php"
         ]
+    },
+    "require": {
+        "afragen/wp-dependency-installer": "^4"
     }
 }
