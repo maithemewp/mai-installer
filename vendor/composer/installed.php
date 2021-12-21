@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '244cf7604a6b34a4662c29385497d4257f175956',
+    'reference' => 'bbd34ee4290fca0f0bdc4ce352a3e53850cba2be',
     'name' => 'maithemewp/mai-installer',
   ),
   'versions' => 
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '244cf7604a6b34a4662c29385497d4257f175956',
+      'reference' => 'bbd34ee4290fca0f0bdc4ce352a3e53850cba2be',
     ),
   ),
 );
