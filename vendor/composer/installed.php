@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1b637076d114af7762855493b9bac009a6272d5c',
+    'reference' => 'ce3045058e2cd82f97c3d12dbd302615c695f587',
     'name' => 'maithemewp/mai-installer',
   ),
   'versions' => 
   array (
     'afragen/wp-dependency-installer' => 
     array (
-      'pretty_version' => '4.2.3',
-      'version' => '4.2.3.0',
+      'pretty_version' => '4.3.2',
+      'version' => '4.3.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '68aa4bfabfe0e807c7cf370580d0254b7b25c4f7',
+      'reference' => '707d659fcbf690999dde8d5a4359e32e0675cf98',
     ),
     'afragen/wp-dismiss-notice' => 
     array (
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1b637076d114af7762855493b9bac009a6272d5c',
+      'reference' => 'ce3045058e2cd82f97c3d12dbd302615c695f587',
     ),
   ),
 );
