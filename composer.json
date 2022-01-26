@@ -1,5 +1,6 @@
 {
     "name": "maithemewp/mai-installer",
+    "version": "1.7.0",
     "type": "library",
     "license": "GPL-2.0-or-later",
     "autoload": {
