@@ -16,7 +16,7 @@ class WP_Dismiss_Notice {
 	 */
 	public static function init() {
 		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'load_script' ] );
-		add_action( 'wp_ajax_dismiss_admin_notice', [ __CLASS__, 'dismiss_admin_notice' ] );
+		add_action( 'wp_ajax_wp_dismiss_notice', [ __CLASS__, 'dismiss_admin_notice' ] );
 	}
 
 	/**
@@ -28,20 +28,34 @@ class WP_Dismiss_Notice {
 			return;
 		}
 
-		$composer_js_path = '/vendor/afragen/wp-dismiss-notice/js/dismiss-notice.js';
-		$plugin_js_url    = plugins_url( 'js/dismiss-notice.js', __FILE__, 'wp-dismiss-notice' );
+		$js_url  = plugins_url( 'js/dismiss-notice.js', __FILE__, 'wp-dismiss-notice' );
+		$version = json_decode( file_get_contents( __DIR__ . '/composer.json' ) )->version;
 
-		// Test to get correct URL for JS.
-		$response = wp_remote_head( $plugin_js_url );
-		$js_url   = ( 200 === wp_remote_retrieve_response_code( $response ) ) || is_wp_error( $response )
-			? $plugin_js_url
-			: get_stylesheet_directory_uri() . $composer_js_path;
+		/**
+		 * Filter composer.json vendor directory.
+		 * Some people don't use the standard vendor directory.
+		 *
+		 * @param string Composer vendor directory.
+		 */
+		$vendor_dir       = apply_filters( 'dismiss_notice_vendor_dir', '/vendor' );
+		$composer_js_path = untrailingslashit( $vendor_dir ) . '/afragen/wp-dismiss-notice/js/dismiss-notice.js';
+
+		$theme_js_url  = get_theme_file_uri( $composer_js_path );
+		$theme_js_file = parse_url( $theme_js_url, PHP_URL_PATH );
+
+		if ( file_exists( ABSPATH . $theme_js_file ) ) {
+			$js_url = $theme_js_url;
+		}
+
+		if ( '/vendor' !== $vendor_dir ) {
+			$js_url = home_url( $composer_js_path );
+		}
 
 		wp_enqueue_script(
 			'dismissible-notices',
 			$js_url,
 			[ 'jquery', 'common' ],
-			false,
+			$version,
 			true
 		);
 
