@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'maithemewp/mai-installer',
-        'pretty_version' => '1.8.1',
-        'version' => '1.8.1.0',
+        'pretty_version' => '1.8.2',
+        'version' => '1.8.2.0',
         'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
@@ -29,8 +29,8 @@
             'dev_requirement' => false,
         ),
         'maithemewp/mai-installer' => array(
-            'pretty_version' => '1.8.1',
-            'version' => '1.8.1.0',
+            'pretty_version' => '1.8.2',
+            'version' => '1.8.2.0',
             'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
